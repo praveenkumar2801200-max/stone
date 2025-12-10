@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STONE ERA - Solid. Timeless. Natural.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --beige: #e5dfd8;
+            --slate: #4a4a47;
+            --granite: #1e1e1c;
+            --offwhite: #f7f6f2;
+        }
+     /* ⭐ PRODUCTS SECTION CLEAN UPDATED ⭐ */
+#products {
+    background: linear-gradient(to bottom, white, var(--beige));
+    padding: 6rem 2rem;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px; /* reduced gap */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-6px); /* reduced hover jump */
+    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+.product-image {
+    width: 100%;
+    height: 240px;  /* balanced height */
+    overflow: hidden;
+    border-bottom: 2px solid var(--beige);
+    background: #fafafa;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* perfect fit */
+    object-position: center;
+    display: block;
+}
+
+.product-info {
+    padding: 15px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--granite);
+}
+
+.product-specs {
+    font-size: 13px;
+    color: var(--slate);
+    margin-bottom: 10px;
+}
+
+/* Durability Bar */
+.durability {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.durability-bar {
+    flex: 1;
+    height: 6px;
+    background: var(--beige);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.durability-fill {
+    height: 100%;
+    width: 80%; /* dynamic if needed */
+    background: linear-gradient(90deg, var(--slate), var(--granite));
+}
+
+
+.product-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills completely, no stretch */
+    object-position: center; /* center focused */
+    display: block;
+}
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--granite);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(247, 246, 242, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(229, 223, 216, 0.3) 0%, rgba(74, 74, 71, 0.1) 100%);
+            z-index: -1;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--granite);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--slate);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--slate);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--granite);
+            transition: 0.3s;
+        }
+     .hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    animation: bgSlide 28s infinite linear, bgMove 20s infinite ease-in-out;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(2px);
+}
+
+.hero * {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(30, 30, 28, 0.4), rgba(30, 30, 28, 0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400"><filter id="n"><feTurbulence baseFrequency="0.9" numOctaves="4"/></filter><rect width="400" height="400" filter="url(%23n)" opacity="0.3"/></svg>'),
+                        linear-gradient(135deg, #4a4a47 0%, #2a2a27 100%);
+            background-size: cover, 200px 200px, cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.3s;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            color: var(--beige);
+            font-weight: 300;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--offwhite);
+            color: var(--granite);
+        }
+
+        .btn-primary:hover {
+            background: var(--beige);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--granite);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--granite);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--slate), transparent);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--slate);
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        #about {
+            background: var(--offwhite);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .about-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--granite);
+        }
+
+        .about-card p {
+            color: var(--slate);
+            line-height: 1.8;
+        }
+
+        /* Products Section */
+        #products {
+            background: linear-gradient(to bottom, white, var(--beige));
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 10px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--slate) 0%, var(--granite) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><filter id="n"><feTurbulence baseFrequency="0.8" numOctaves="3"/></filter><rect width="200" height="200" filter="url(%23n)" opacity="0.4"/></svg>');
+            background-size: 150px 150px;
+        }
+
+        .product-info {
+            padding: 2rem;
+        }
+
+        .product-info h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: var(--granite);
+        }
+
+        .product-specs {
+            color: var(--slate);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .durability {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .durability-bar {
+            flex: 1;
+            height: 8px;
+            background: var(--beige);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .durability-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--slate), var(--granite));
+            border-radius: 10px;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: var(--offwhite);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            height: 350px;
+            background: linear-gradient(135deg, var(--beige) 0%, var(--slate) 100%);
+            border-radius: 6px;
+            overflow: hidden;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .gallery-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence baseFrequency="0.7" numOctaves="5"/></filter><rect width="300" height="300" filter="url(%23n)" opacity="0.5"/></svg>');
+            background-size: 250px 250px;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover::before {
+            transform: scale(1.1);
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: white;
+        }
+
+        .testimonials-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--offwhite);
+            padding: 3rem;
+            border-radius: 6px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--slate);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .testimonial-text {
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--slate);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--slate);
+        }
+
+        .author-info h4 {
+            color: var(--granite);
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            color: var(--slate);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(to bottom, var(--beige), var(--offwhite));
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--slate);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .contact-details h3 {
+            color: var(--granite);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--slate);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--granite);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--beige);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--slate);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--granite) 0%, var(--slate) 100%);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="n"><feTurbulence baseFrequency="0.6" numOctaves="3"/></filter><rect width="300" height="300" filter="url(%23n)" opacity="0.15"/></svg>');
+            background-size: 200px 200px;
+            pointer-events: none;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .social-icon:hover {
+            background: white;
+            color: var(--granite);
+            transform: translateY(-5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--offwhite);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                pointer-events: none;
+                transition: all 0.3s;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        @keyframes bgSlide {
+    0%   { background-image: url('/images/Green\ quartz\ A\ Grade.png'); }
+    16%  { background-image: url('/images/Mica\ quartz.png'); }
+    33%  { background-image: url('/images/Mica\ sheet.png'); }
+    50%  { background-image: url('/images/Rose\ quartz.png'); }
+    66%  { background-image: url('/images/Silica\ granular\ quartz.png'); }
+    83%  { background-image: url('/images/Silica\ Smokey\ quartz.png'); }
+    100% { background-image: url('/images/Smokey\ silica.png'); }
+}
+@keyframes bgMove {
+    0%   { background-position: left center; }
+    50%  { background-position: right center; }
+    100% { background-position: left center; }
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">JM ENTERPRISES</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Solid. Timeless. Natural.</h1>
+        <p>Stone collections crafted for architecture, interiors and luxury exterior design.</p>
+        <div class="cta-buttons">
+            <a href="#products" class="btn btn-primary">Explore Collection</a>
+            <a href="#contact" class="btn btn-secondary">Contact</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Stone Era</h2>
+            <p class="section-subtitle">Crafting excellence since the foundation</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Our Heritage</h3>
+                    <p>For over three decades, Stone Era has been at the forefront of premium stone craftsmanship. Our journey began in the quarries, where we learned to respect the natural beauty and strength of stone. Today, we combine traditional techniques with modern innovation to deliver unparalleled quality.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Quality Standards</h3>
+                    <p>Every piece that leaves our facility undergoes rigorous quality testing. We maintain ISO certifications and partner with geological experts to ensure structural integrity, aesthetic excellence, and longevity. Our commitment to quality is embedded in every grain and texture.</p>
+                </div>
+                
+                <div class="about-card">
+                    <h3>Sustainable Sourcing</h3>
+                    <p>We work directly with responsible quarries across the globe, ensuring ethical extraction and environmental stewardship. Our stone is sourced from select locations known for their unique geological formations, bringing you materials that tell a story millions of years in the making.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+<section id="products">
+    <div class="container">
+        <h2 class="section-title">Our Collection</h2>
+        <p class="section-subtitle">Premium materials for exceptional projects</p>
+        
+        <div class="products-grid">
+
+            <!-- Green Quartz A Grade -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Green quartz A Grade.png" alt="Green quartz A Grade">
+                </div>
+                <div class="product-info">
+                    <h3>Green Quartz A Grade</h3>
+                    <p class="product-specs">Thickness: 20-30mm | Finish: Polished/Honed<br>Origin: Brazil, India</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mica Quartz -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Mica quartz.png" alt="Mica quartz">
+                </div>
+                <div class="product-info">
+                    <h3>Mica Quartz</h3>
+                    <p class="product-specs">Thickness: 15-25mm | Finish: Glossy/Matte<br>Origin: Italy, Turkey</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mica Sheet -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Mica sheet.png" alt="Mica Sheet">
+                </div>
+                <div class="product-info">
+                    <h3>Mica Sheet</h3>
+                    <p class="product-specs">Thickness: 10-18mm | Finish: Smooth/Eco<br>Origin: India, Nepal</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Rose Quartz -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Rose quartz.png" alt="Rose quartz">
+                </div>
+                <div class="product-info">
+                    <h3>Rose Quartz</h3>
+                    <p class="product-specs">Thickness: 20-28mm | Finish: Luxury Polished<br>Origin: Madagascar, Brazil</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 92%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silica Granular Quartz -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Silica granular quartz.png" alt="Silica granular quartz">
+                </div>
+                <div class="product-info">
+                    <h3>Silica Granular Quartz</h3>
+                    <p class="product-specs">Granule Size: 1–5mm | Finish: Natural<br>Origin: USA, Germany</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silica Smokey Quartz -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Silica Smokey quartz.png" alt="Silica Smokey quartz">
+                </div>
+                <div class="product-info">
+                    <h3>Silica Smokey Quartz</h3>
+                    <p class="product-specs">Thickness: 18-25mm | Finish: Matte/Raw<br>Origin: Morocco, India</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 87%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smokey Silica -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Smokey silica.png" alt="Smokey silica">
+                </div>
+                <div class="product-info">
+                    <h3>Smokey Silica</h3>
+                    <p class="product-specs">Thickness: 20-32mm | Finish: Fine Polished<br>Origin: Australia, China</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Untitled Design (Stone) -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/Untitled design.png" alt="Stone Collection">
+                </div>
+                <div class="product-info">
+                    <h3>Natural Stone Selection</h3>
+                    <p class="product-specs">Mixed Stone Showcase | Premium Cuts<br>Origin: Global Mines</p>
+                    <div class="durability">
+                        <span>Durability:</span>
+                        <div class="durability-bar">
+                            <div class="durability-fill" style="width: 93%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <p class="section-subtitle">Explore textures and finishes</p>
+            
+            <div class="gallery-grid">
+              <div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Green+Quartz');"></div>
+<div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Mica+Quartz');"></div>
+<div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Mica+Sheet');"></div>
+<div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Rose+Quartz');"></div>
+<div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Silica+Granular');"></div>
+<div class="gallery-item" style="background-image: url('https://via.placeholder.com/300x200?text=Smokey+Quartz');"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle">What our partners say</p>
+            
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <p class="testimonial-text">"Stone Era transformed our luxury resort project with their exceptional granite selections. The quality and attention to detail exceeded our expectations. Their team's expertise in matching the right stone to our architectural vision was invaluable."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Lead Architect, Horizon Designs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"We've partnered with Stone Era for five years now, and they consistently deliver premium materials on time. Their marble collection is unmatched in the region, and their customer service makes every project seamless from selection to installation."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Sarah Williams</h4>
+                            <p>Interior Designer, Luxe Interiors</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"The exterior stone panels we sourced from Stone Era have withstood harsh weather conditions beautifully. Three years later, they look as stunning as day one. This durability combined with aesthetic appeal is exactly what our commercial projects demand."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <p>Project Manager, BuildCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-text">"From kitchen countertops to bathroom tiles, Stone Era provided us with comprehensive solutions for our residential complex. Their range of finishes and competitive pricing made them our go-to supplier. Highly recommended for any scale project."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar"></div>
+                        <div class="author-info">
+                            <h4>Emily Thompson</h4>
+                            <p>Developer, Urban Living Properties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's discuss your stone needs</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+91 90253 23400</p>
+                            <p>+91 90253 23400</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>info@jmenterprises.com</p>
+                            <p>sales@jmenterprises.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>2580 Stone Valley Road</p>
+                            <p>Boulder, Colorado 80301</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 4:00 PM</p>
+                            <p>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inquiry">Inquiry Type</label>
+                            <select id="inquiry" name="inquiry" required>
+                                <option value="">Select an option</option>
+                                <option value="residential">Residential Project</option>
+                                <option value="commercial">Commercial Project</option>
+                                <option value="quote">Request a Quote</option>
+                                <option value="samples">Request Samples</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>STONE ERA</h3>
+                <p>Premium stone materials for architectural excellence. Crafting timeless spaces with nature's finest resources.</p>
+                <div class="social-links">
+                    <div class="social-icon">📷</div>
+                    <div class="social-icon">💼</div>
+                    <div class="social-icon">📌</div>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#about" style="color: white; text-decoration: none;">About Us</a></p>
+                <p><a href="#products" style="color: white; text-decoration: none;">Products</a></p>
+                <p><a href="#gallery" style="color: white; text-decoration: none;">Gallery</a></p>
+                <p><a href="#contact" style="color: white; text-decoration: none;">Contact</a></p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Services</h3>
+                <p>Custom Stone Cutting</p>
+                <p>Installation Consultation</p>
+                <p>Material Sourcing</p>
+                <p>Quality Assurance</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p>Subscribe to receive updates on new collections and exclusive offers.</p>
+                <input type="email" placeholder="Your email" style="width: 100%; padding: 0.8rem; margin-top: 1rem; border: none; border-radius: 6px;">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 STONE ERA. All rights reserved. | Solid. Timeless. Natural.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will get back to you within 24 hours.');
+            e.target.reset();
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const targetPosition = target.offsetTop - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            } else {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            }
+        });
+    </script>
+</body>
+</html>
